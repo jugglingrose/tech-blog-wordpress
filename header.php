@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?> >
 <head>
-  <title>Learn WP</title>
   <?php wp_head(); ?>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="utf-8">
+  <meta charset="<?php bloginfo('charset'); ?>">
+
 </head>
 <body <?php body_class(); ?>>
   <p>This is a sentence inside of my header.php file</p>

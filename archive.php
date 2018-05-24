@@ -7,15 +7,20 @@
       <section class="middle-area">
         <div class="container">
           <div class="row">
-            <div class="news col-md-9">
+            <div class="archive col-md-9">
 
               <?php
+
+              the_archive_title('<h1 class="archive-title">', '</h1>');
+              the_archive_description();
+
+
               //If posts
               if( have_posts() ):
                 //while have_posts
                 while( have_posts() ): the_post();
 
-                get_template_part('template-parts/content', get_post_format() );
+                get_template_part('template-parts/content', 'archive' );
 
                 endwhile;
            ?>
