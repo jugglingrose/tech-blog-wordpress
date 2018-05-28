@@ -1,4 +1,11 @@
 <?php
+//Require Theme Customizer
+require get_template_directory() . '/inc/customizer.php';
+
+//Requiring TGM Plugin Activation
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/required-plugins.php';
+
 
 function load_scripts(){
   wp_enqueue_script( 'boostrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array( 'jquery'), '4.0.0', true);
@@ -24,6 +31,11 @@ function learnwp_config(){
   add_theme_support('post-thumbnails');
   add_theme_support('post-formats', array( 'video', 'image'));
   add_theme_support( 'title-tag');
+  add_theme_support( 'custom-logo', array(
+    'height' => 110,
+    'width' => 200
+  ) );
+
 }
 
 add_action( 'after_setup_theme', 'learnwp_config', 0);

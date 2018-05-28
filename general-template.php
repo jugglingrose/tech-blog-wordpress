@@ -25,7 +25,6 @@ Template Name: General Template
 
                 <p><?php the_content(); ?></p>
               </article>
-              <p>This page template is the same on all pages</p>
               <?php
             endwhile;
             else:

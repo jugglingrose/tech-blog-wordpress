@@ -43,14 +43,14 @@
       <section class="middle-area">
         <div class="container">
           <div class="row">
-            <aside class="sidebar col-md-3 h-100">
+            <aside class="sidebar col-md-4 h-100">
 
               <?php
               get_sidebar( 'home' );
               ?>
 
             </aside>
-            <div class="news col-md-9">
+            <div class="news col-md-8">
             <div class="container">
               <div class="row">
 
@@ -92,15 +92,21 @@
               endif;
 
                 ?>
-
             </div>
           </div>
         </div>
       </section>
       <section class="map">
-      <div class="container">
-        <div class="row">Map</div>
-      </div>
+        <?php
+            $key = get_theme_mod( 'set_map_apikey' );
+            $address = urlencode( get_theme_mod( 'set_map_address') );
+          ?>
+          <iframe
+            width="100%"
+            height="350"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key=<?php echo $key; ?>&q=<?php echo $address; ?>&zoom=15" allowfullscreen>
+          </iframe>
     </section>
   </main>
 </div>
